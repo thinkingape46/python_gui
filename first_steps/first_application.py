@@ -1,9 +1,10 @@
-# My first python gui file.
+# My first python gui file. just displays the time.
 # Learning from http://zetcode.com/wxpython
 # Inspections specific for this py file is at http://zetcode.com/wxpython/firststeps/
 
 # import the wxPython modules, such as core, controls, gdi (graphics device interface), windows etc.
 import wx
+import time
 
 # Creation of an application object. i.e. app
 # Each wxPython program must have one application object.
@@ -21,13 +22,17 @@ app = wx.App()
 # wx.Size size=wx.DefaultSize, 
 # style=wx.DEFAULT_FRAME_STYLE, 
 # string name="frame")"
-frame = wx.Frame(None, title = "My First wxPython Application")
 
-button = wx.Button(frame, label="I am a Button", name="Name")
+frame = wx.Frame(None, title = "Current Date and Time")
+
+time_now = str(time.ctime())
+button = wx.Button(frame, label=time_now, name="Name")
+time.sleep(1)
+
 
 # After we create the frame widget, must call the Show() method to actually display it on the screen.
 frame.Show(True)
-button.Show(False)
+button.Show(True)
 
 # Then we add the MainLoop line, the main loop is an endless cycle, it catches and dispatches all events that exist during the life of our application.
 
