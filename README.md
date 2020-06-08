@@ -1,4 +1,4 @@
-# wxpython
-created to learn wxpython
+Created to learn gui for python.
 
-Visit http://zetcode.com/wxpython for great tutorials on wxPython.
+wxPython: Visit http://zetcode.com/wxpython for great tutorials.
+tkinter: https://www.youtube.com/watch?v=YXPyB4XeYLAfor
