@@ -5,6 +5,9 @@ from tkinter import *
 root = Tk()
 root.title("Simple Calculator")
 
+# adding an icon
+root.iconbitmap("D:/Learning/GitHub/python_gui/tkinter/calculator/calculator.ico")
+
 # This is a string that stores all the keys strokes "0 to 9,+,-,*".
 # The reason this temp_string utilized is, to accept multiple digit numbers.
 # The temp_string concatenate the number entered by user.
