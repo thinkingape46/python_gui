@@ -26,20 +26,20 @@
     GridLayout:
         cols: 1
         Label:
-            text: 'First Name'
+            text: 'User Name'
         TextInput:
-            hint_text: 'First Name'
-            id: f_n
+            hint_text: 'User Name'
+            id: u_n
         
         Label:
-            text: 'Last Name'
+            text: 'Password'
         TextInput:
-            hint_text: 'Last Name'
-            id: l_n
+            hint_text: 'Password'
+            id: pword
 
         Button:
             text: 'Sign Up!'
-            on_press: root.add_user(root.ids.f_n.text, root.ids.l_n.text)
+            on_press: root.add_user(root.ids.u_n.text, root.ids.pword.text)
         Button:
             text:'Log In'
             on_press: RootWidget.LoginScreen.root()
