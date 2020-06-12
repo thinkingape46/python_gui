@@ -149,8 +149,8 @@ btn_three.grid(row = 3, column = 2)
 btn_three = Button(root, text = "0", bd = 6, width = 6, height = 3, padx = 3, bg = "#b0cfc7", command = lambda: btn_rec(0))
 btn_three.grid(row = 4, column = 0)
 
-btn_enter = Button(root, text = "Enter", bd = 6, width = 6, height = 3, padx = 3, bg = "#b0cfc7", command = output_screen)
-btn_enter.grid(row = 4, column = 1)
+btn_enter = Button(root, text = "Enter", bd = 6, width = 15, height = 3, padx = 3, bg = "#b0cfc7", command = output_screen)
+btn_enter.grid(row = 5, column = 0, columnspan=2)
 
 btn_add = Button(root, text = "+", bd = 6, width = 6, height = 3, padx = 3, bg = "#b0cfc7", command = lambda: btn_rec("+"))
 btn_add.grid(row = 1, column = 3)
@@ -164,7 +164,7 @@ btn_prod.grid(row = 3, column = 3)
 btn_div = Button(root, text = "÷", bd = 6, width = 6, height = 3, padx = 3, bg = "#b0cfc7", command = lambda: btn_rec("÷"))
 btn_div.grid(row = 4, column = 3)
 
-btn_clear = Button(root, text = "Clear", bd = 6, width = 6, height = 3, padx = 3, bg = "#b0cfc7", command = clear_screen)
-btn_clear.grid(row = 4, column = 2)
+btn_clear = Button(root, text = "Clear", bd = 6, width = 15, height = 3, padx = 3, bg = "#b0cfc7", command = clear_screen)
+btn_clear.grid(row = 5, column = 2, columnspan=2)
 
 root.mainloop()
