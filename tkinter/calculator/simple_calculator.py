@@ -28,9 +28,12 @@ def btn_rec(num_sym):
 
     # import global temp_string
     global temp_string
+    
+    if ' ' in scr_top.get():
+        scr_top.delete(0, END)
 
     # below 'if' statement runs whenver arithmetic is entered.
-    if num_sym in ["+", "-", "*"]:
+    if num_sym in ["+", "-", "*", '÷']:
 
         # Below line appends the previously enter number or operator to the "add_input" list and empties the string.
         # This is done so that the opertor doesn't sit next to another operator.
@@ -72,7 +75,7 @@ def output_screen():
     scr_top.delete(0, END)
 
     # scr_top entry is updated with results.
-    scr_top.insert(0, result)
+    scr_top.insert(0, str(result) + ' ')
     temp_string = ""
     add_input = []
 
@@ -93,8 +96,18 @@ def processing():
     return result
 
 def multiply(add_input):
+    i = add_input
+
+    while ["÷"] in add_input:
+        
+        index = i.index(["÷"])
+        y = int(i[index - 1])/int(i[index + 1])
+        for j in range(0, 3):
+            i.pop(index - 1)
+        i.insert(index - 1, y)    
+
     while ["*"] in add_input:
-        i = add_input
+        
         index = i.index(["*"])
         y = int(i[index - 1])*int(i[index + 1])
         for j in range(0, 3):
@@ -145,10 +158,13 @@ btn_add.grid(row = 1, column = 3)
 btn_sub = Button(root, text = "-", bd = 6, width = 6, height = 3, padx = 3, bg = "#b0cfc7", command = lambda: btn_rec("-"))
 btn_sub.grid(row = 2, column = 3)
 
-btn_prod = Button(root, text = "X", bd = 6, width = 6, height = 3, padx = 3, bg = "#b0cfc7", command = lambda: btn_rec("*"))
+btn_prod = Button(root, text = "×", bd = 6, width = 6, height = 3, padx = 3, bg = "#b0cfc7", command = lambda: btn_rec("*"))
 btn_prod.grid(row = 3, column = 3)
 
-btn_prod = Button(root, text = "Clear", bd = 6, width = 6, height = 3, padx = 3, bg = "#b0cfc7", command = clear_screen)
-btn_prod.grid(row = 4, column = 2)
+btn_div = Button(root, text = "÷", bd = 6, width = 6, height = 3, padx = 3, bg = "#b0cfc7", command = lambda: btn_rec("÷"))
+btn_div.grid(row = 4, column = 3)
+
+btn_clear = Button(root, text = "Clear", bd = 6, width = 6, height = 3, padx = 3, bg = "#b0cfc7", command = clear_screen)
+btn_clear.grid(row = 4, column = 2)
 
 root.mainloop()
