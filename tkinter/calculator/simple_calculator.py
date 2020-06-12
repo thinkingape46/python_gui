@@ -1,6 +1,6 @@
 # Import all from tkinter
 
-from tkinter import *
+from tkinter import Tk, Entry, END, Button
 
 root = Tk()
 root.title("Simple Calculator")
@@ -21,7 +21,7 @@ def enter(x):
     pass
 
 # Create a screen that displays input and output.
-scr_top = Entry(root, width=40, borderwidth=10, bg="#dedede", fg="#004f3b")
+scr_top = Entry(root, width=33, borderwidth=10, bg="#dedede", fg="#004f3b")
 scr_top.grid(row = 0, columnspan = 4)
 
 def btn_rec(num_sym):
@@ -81,14 +81,14 @@ def output_screen():
 
 def processing():
     multiply(add_input)
-    result = int(add_input[0])
+    result = float(add_input[0])
     i = 0
     while i < len(add_input) - 2:
         if add_input[i + 1][0] == "+":        
-            result = result + int(add_input[i + 2])
+            result = result + float(add_input[i + 2])
             
         elif add_input[i + 1][0] == "-":
-            result = result - int(add_input[i + 2])
+            result = result - float(add_input[i + 2])
             
         else:
             break
@@ -101,7 +101,7 @@ def multiply(add_input):
     while ["÷"] in add_input:
         
         index = i.index(["÷"])
-        y = int(i[index - 1])/int(i[index + 1])
+        y = float(i[index - 1])/float(i[index + 1])
         for j in range(0, 3):
             i.pop(index - 1)
         i.insert(index - 1, y)    
@@ -109,7 +109,7 @@ def multiply(add_input):
     while ["*"] in add_input:
         
         index = i.index(["*"])
-        y = int(i[index - 1])*int(i[index + 1])
+        y = float(i[index - 1])*float(i[index + 1])
         for j in range(0, 3):
             i.pop(index - 1)
         i.insert(index - 1, y)
