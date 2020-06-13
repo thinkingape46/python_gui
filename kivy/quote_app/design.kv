@@ -4,14 +4,27 @@
         cols: 1
         GridLayout:
             cols: 1
+            padding: 40, 30
+            spacing: 10, 10
             Label:
                 text: 'User Login'
+                font_size: '20sp'
             TextInput:
                 hint_text: 'Username'
+                id: u_n
             TextInput:
                 hint_text: 'Password'
-            Button:
-                text: 'Submit'
+                id: pword
+            
+            RelativeLayout
+                Button:
+                    text: 'Submit'
+                    on_press: root.login_success(root.ids.u_n.text, root.ids.pword.text)
+                    size_hint: 0.25, 0.8
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            Label:
+                text: ''
+                id: login_wrong
 
         GridLayout:
             cols: 2
@@ -25,6 +38,8 @@
 
     GridLayout:
         cols: 1
+        Label:
+            text: 'Sign Up'
         Label:
             text: 'User Name'
         TextInput:
@@ -42,11 +57,45 @@
             on_press: root.add_user(root.ids.u_n.text, root.ids.pword.text)
         Button:
             text:'Log In'
-            on_press: RootWidget.LoginScreen.root()
+            on_press: root.log_in()
             
+<SignUpSuccess>
+    GridLayout:
+        cols: 1
+        Label:
+            text: 'Sign Up Succesful!'
+        Button:
+            text:'Login'
+            on_press: root.log_in()
+
+<LoginSuccesScreen>
+    GridLayout:
+        cols: 1
+        Button:
+            text:'Log Out'
+            on_press: root.log_out()
+        Label:
+            text:'How do you feel?'
+        TextInput:
+            id: mood
+            hint_text: 'Your mood please...happy, sad or unloved'
+        Button:
+            text:'Enlighten Me!'
+            on_press: root.quote_display(root.ids.mood.text)
+        GridLayout:
+            cols: 1
+            rows: 3
+            height: 100
+            Label:
+                text: ''
+                id: quote
 
 <RootWidget>
     LoginScreen
         name: 'Login_Screen'
     SignUpScreen
         name: 'Signup_Screen'
+    SignUpSuccess
+        name: 'Sign_Up_Screen_Success'
+    LoginSuccesScreen
+        name: 'Log_In_Success_Screen'
