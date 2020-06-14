@@ -15,6 +15,7 @@
             TextInput:
                 hint_text: 'Password'
                 id: pword
+                password: True
             
             RelativeLayout
                 Button:
@@ -28,11 +29,20 @@
 
         GridLayout:
             cols: 2
+            size_hint: 0.2, 0.2
+            padding: 10, 10
+            spacing: 250, 0
             Button:
                 text:'Forgot Password?'
+                color: .45, 1, 0.64, 1
+                background_color: 1, 1, 1, 0
+                opacity: 1 if self.state=='normal' else 0.75
             Button:
                 text: 'Sign Up'
                 on_press: root.sign_up()
+                color: .45, 1, 0.64, 1
+                background_color: 1, 1, 1, 0
+                opacity: 1 if self.state=='normal' else 0.75
 
 <SignUpScreen>
 
