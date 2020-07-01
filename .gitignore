@@ -3498,3 +3498,8 @@ venv/Scripts/winsound.pyd
 venv/Scripts/xlwings32-0.15.1.dll
 venv/Scripts/xlwings64-0.15.1.dll
 .idea/workspace.xml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/PyQt5.iml
+.idea/vcs.xml

@@ -1,5 +1,6 @@
-import  sys
+import sys
 from PyQt5.QtWidgets import *
+
 
 class Window(QWidget):
 
@@ -25,10 +26,11 @@ class Window(QWidget):
     def enter_func(self):
         self.text.setText("You clicked Enter")
         self.text.resize(150, 10)
- 
+
     def exit_func(self):
         self.text.setText("You clicked Exit")
         self.text.resize(150, 10)
+
 
 def main():
     App = QApplication(sys.argv)
